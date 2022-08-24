@@ -41,7 +41,7 @@ const Service = ({ data, image, name }) => {
             </div>
             <div className="block md:hidden absolute top-40 left-1/2 transform -translate-x-1/2  uppercase text-2sm font-semibold cursor-pointer">{active.title}</div>
 
-            <div className="absolute top-1/2 flex flex-col items-start justify-center ">
+            <div className="absolute top-1/2 -translate-y-1/2 lg:-translate-y-0 flex flex-col items-start justify-center ">
                 <div className="flex items-center w-full justify-center md:justify-start md:pl-[60px] flex-wrap">
                     {
                         data.map((item, index) => (
@@ -61,7 +61,7 @@ const Service = ({ data, image, name }) => {
             </div>
             {
                 data.map((item, index) => (
-                    <div className={`absolute top-[50%]  md:top-[60%] w-[80%] lg:pl-[60px] px-6 mt-[30px] 
+                    <div className={`absolute top-[50%]  lg:top-[60%] w-[80%] lg:pl-[60px] px-6 mt-[30px] 
                         text-white text-sm md:text-base ${active.title === item.title ? 'visible translate-x-0 opacity-1  transition-all duration-500 ease-in-out' :
                             'invisible  opacity-0  transform translate-x-40 '}
                     font-light`}
