@@ -46,7 +46,7 @@ const Service = ({ data, image, name }) => {
                     {
                         data.map((item, index) => (
                             <div className={`hidden md:block mr-[50px] mb-[30px] uppercase text-2sm font-semibold relative cursor-pointer
-                             ${active.title === item.title ? 'text-active menu-active' : 'text-white'}
+                             ${active.title === item.title ? 'text-active menu-active transition-all duration-200 ease-linear' : 'text-white'}
                              `}
                                 key={index}
                                 onClick={() => hanldeActiveItem(item, index)}
