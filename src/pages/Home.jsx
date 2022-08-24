@@ -6,10 +6,10 @@ import ContentDistr from '../components/ContentDistr'
 import Partners from '../components/Partners'
 import Service from '../components/Service'
 import Footer from '../components/Footer'
+import Platform from '../components/Platform'
 
 import serviceImage from '../assets/Rectangle_8.png'
 import productImage from '../assets/Rectangle_10.png'
-import OOTImage from '../assets/Rectangle_9.png'
 
 const serviceMenu = [
     {
@@ -62,22 +62,7 @@ const Home = () => {
                 image={serviceImage}
                 name="Services"
             />
-            <div className="bg-cover bg-no-repeat bg-center h-screen relative"
-                style={{ backgroundImage: `url(${OOTImage})` }}
-            >
-                <div className="absolute px-6 md:px-0 top-4 text-center md:text-left md:top-[200px] md:pl-[66px] md:pr-[260px]">
-                    <h3 className='text-2sm md:text-base font-semibold text-white mb-5 md:mb-6 uppercase'>OTT Platform</h3>
-                    <p className='text-sm md:text-base font-light text-white text-justify'>
-                        Sivoo’s OTT platform is a market-ready, white-labelable (hardware/software) OTT
-                        dongle aiming to reach cord Nevers, cord cutters, and multi-room subscribers. Our
-                        platform changes the game for operators by expanding customer reach with minimal
-                        acquisition costs. Take back control of the OTT device and offer the TV experience
-                        you envisioned by easily and quickly connecting and growing your subscriber base on
-                        your terms, while providing the apps and content consumers know and watch.
-
-                    </p>
-                </div>
-            </div>
+            <Platform />
             <Service
                 data={productsMenu}
                 image={productImage}

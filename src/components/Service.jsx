@@ -6,20 +6,42 @@ import arrowLeft from '../assets/ArrowLeft.png'
 const Service = ({ data, image, name }) => {
 
     const [active, setActive] = useState(data[0])
+    const [indexActive, setIndexActive] = useState(0)
+
+    const hanldeActiveItem = (item, index) => {
+        setActive(item)
+        setIndexActive(index)
+    }
+
+    const handleClickRightSlide = () => {
+        const index = indexActive + 1 >= data.length ? 0 : indexActive + 1
+        setActive(data[index])
+        setIndexActive(index)
+
+    }
+
+    const handleClickLeftSlide = () => {
+        const index = indexActive - 1 < 0 ? data.length - 1 : indexActive - 1
+        setActive(data[index])
+        setIndexActive(index)
+    }
+
     return (
         <div style={{ backgroundImage: `url(${image})` }}
             className="bg-cover bg-no-repeat bg-center h-[calc(100vh)] relative"
         >
             <h2 className='font-semibold text-base uppercase text-white text-center pt-[60px]'>{name}</h2>
-            <div className="absolute top-40 md:top-32 lg:top-40 left-[60px]">
+            <div className="absolute top-40 md:top-32 lg:top-40 left-[60px] cursor-pointer p-2"
+                onClick={handleClickLeftSlide}>
                 <img src={arrowLeft} alt="" />
             </div>
-            <div className="absolute top-40 md:top-32 lg:top-40  right-[60px]">
+            <div className="absolute top-40 md:top-32 lg:top-40  right-[60px] cursor-pointer p-2"
+                onClick={handleClickRightSlide}>
                 <img src={arrowRight} alt="" />
             </div>
             <div className="block md:hidden absolute top-40 left-1/2 transform -translate-x-1/2  uppercase text-2sm font-semibold cursor-pointer">{active.title}</div>
 
-            <div className="absolute bottom-[60px] flex flex-col items-start justify-center ">
+            <div className="absolute top-1/2 flex flex-col items-start justify-center ">
                 <div className="flex items-center w-full justify-center md:justify-start md:pl-[60px] flex-wrap">
                     {
                         data.map((item, index) => (
@@ -27,7 +49,7 @@ const Service = ({ data, image, name }) => {
                              ${active.title === item.title ? 'text-active menu-active' : 'text-white'}
                              `}
                                 key={index}
-                                onClick={() => setActive(item)}
+                                onClick={() => hanldeActiveItem(item, index)}
                             >
                                 {item.title}
                             </div>
@@ -35,10 +57,19 @@ const Service = ({ data, image, name }) => {
                     }
 
                 </div>
-                <div className="lg:pr-[330px] lg:pl-[60px] px-6 text-center mt-[30px] text-white text-sm md:text-base font-light">
-                    {active.content}
-                </div>
+
             </div>
+            {
+                data.map((item, index) => (
+                    <div className={`absolute top-[50%]  md:top-[60%] w-[80%] lg:pl-[60px] px-6 mt-[30px] 
+                        text-white text-sm md:text-base ${active.title === item.title ? 'visible translate-x-0 opacity-1  transition-all duration-500 ease-in-out' :
+                            'invisible  opacity-0  transform translate-x-40 '}
+                    font-light`}
+                        key={index}>
+                        {item.content}
+                    </div>
+                ))
+            }
         </div>
     )
 }

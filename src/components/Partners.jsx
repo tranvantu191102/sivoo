@@ -15,7 +15,7 @@ const Partners = () => {
         <div className='md:py-20 lg:px-[105px]  mt-[50px] lg:mt-0'>
             <h3 className='text-base font-semibold text-current px-6'>OUR PARTNERS</h3>
             <img src={frame} alt="" className='mt-6 lg:mb-24 mb-5 px-6 ' />
-            <div className="hidden md:flex items-center justify-center overflow-x-auto pb-8 lg:pb-0">
+            <div className="hidden lg:flex items-center justify-center overflow-x-auto pb-8 lg:pb-0">
                 <img
                     src={image1}
                     alt=""
@@ -42,7 +42,7 @@ const Partners = () => {
                     className='h-[50px] md:h-auto mb-2 mr-6'
                 />
             </div>
-            <div className="block md:hidden py-7">
+            <div className="block lg:hidden py-7">
                 {
                     <Swiper
                         slidesPerView={3}

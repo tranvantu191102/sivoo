@@ -17,3 +17,7 @@ body {
 .menu-active::before {
     @apply absolute content-[''] -bottom-2 h-[3px] bg-active left-0 w-full
 }
+
+.appear {
+    @apply visible translate-x-0 translate-y-0 opacity-100 pointer-events-auto transform transition-all duration-500 ease-in
+}

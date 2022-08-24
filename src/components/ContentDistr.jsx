@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import image1 from '../assets/Rectangle_11.png'
 import image2 from '../assets/Rectangle_12.png'
@@ -13,9 +13,40 @@ import ios from '../assets/Group_5.png'
 import android from '../assets/Group_2.png'
 
 const ContentDistr = () => {
+    const rightRef = useRef(null)
+    const leftRef = useRef(null)
+
+    useEffect(() => {
+
+
+        const appearOptions = {
+            threshold: 0,
+            rootMargin: "0px 0px -250px 0px"
+        };
+
+        const appearOnScroll = new IntersectionObserver(function (
+            entries,
+            appearOnScroll
+        ) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add("appear");
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        },
+            appearOptions);
+
+        appearOnScroll.observe(rightRef.current);
+        appearOnScroll.observe(leftRef.current);
+        // appearOnScroll.observe(contentRef.current);
+    }, [])
     return (
         <div className='bg-inherit relative flex flex-col lg:justify-between lg:flex-row items-center h-auto '>
-            <div className="hidden md:w-[40%]  lg:flex">
+            <div ref={rightRef}
+                className="hidden md:w-[40%]  lg:flex  invisible -translate-x-40 opacity-0 pointer-events-none">
                 <img
                     src={image1} alt=""
                 />
@@ -42,7 +73,8 @@ const ContentDistr = () => {
                     className='w-[35%] h-[430px]  md:h-auto  md:max-h-screen'
                 />
             </div>
-            <div className="w-full md:w-[100%] md:px-6 lg:w-[50%]  lg:pr-20 px-6">
+            <div ref={leftRef}
+                className="w-full md:w-[100%] md:px-6 lg:w-[50%]  lg:pr-20 px-6  invisible -translate-x-40 opacity-0 pointer-events-none">
                 <h3 className='font-semibold text-base text-current uppercase mt-6 lg:mt-0'>Content Distribution</h3>
                 <img src={frame} alt="" className='md:my-6 mt-2 mb-8' />
                 <p className='text-base text-current font-light'>
