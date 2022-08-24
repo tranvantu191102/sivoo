@@ -40,10 +40,10 @@ const Platform = () => {
         >
             <div className="absolute px-6 md:px-0 top-4 text-center md:text-left md:top-[55%] md:pl-[66px] md:pr-[260px]">
                 <h3 ref={titleRef}
-                    className='text-2sm md:text-base font-semibold text-white mb-5 md:mb-6 uppercase invisible translate-x-40 opacity-0 pointer-events-none'
+                    className='text-2sm md:text-base font-semibold text-white mb-5 md:mb-6 uppercase invisible translate-x-20 lg:translate-x-40 opacity-0 pointer-events-none'
                 >OTT Platform</h3>
                 <p ref={contentRef}
-                    className='text-sm md:text-base font-light text-white text-justify invisible -translate-x-40 opacity-0 pointer-events-none'>
+                    className='text-sm md:text-base font-light text-white text-justify invisible -translate-x-20 lg:-translate-x-40 opacity-0 pointer-events-none'>
                     Sivoo’s OTT platform is a market-ready, white-labelable (hardware/software) OTT
                     dongle aiming to reach cord Nevers, cord cutters, and multi-room subscribers. Our
                     platform changes the game for operators by expanding customer reach with minimal

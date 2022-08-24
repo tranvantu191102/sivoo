@@ -40,10 +40,10 @@ const Banner = () => {
         >
             <div className="absolute bottom-0 left-0 px-6 pb-5 md:pl-24 md:pr-60 md:pt-24 md:pb-16">
                 <h3 ref={titleRef}
-                    className='text-white text-base md:text-lg font-normal mb-4 md:mb-10 invisible translate-x-40 opacity-0 pointer-events-none'
+                    className='text-white text-base md:text-lg font-normal mb-4 md:mb-10 invisible -translate-y-40 opacity-0 pointer-events-none'
                 >Trust Sivoo with your enterprise</h3>
                 <p ref={contentRef}
-                    className='text-white text-sm md:text-base font-light invisible -translate-x-40 opacity-0 pointer-events-none'>
+                    className='text-white text-sm md:text-base font-light invisible -translate-y-60 opacity-0 pointer-events-none'>
                     From our alliance with global data centers, who support our CDN infrastructure,
                     to the mobile and OTT apps that leverage its breadth, we develop platforms for
                     video ingestion, encoding, delivery and viewing. Our mobile platform partnership

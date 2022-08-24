@@ -63,7 +63,7 @@ const Service = ({ data, image, name }) => {
                 data.map((item, index) => (
                     <div className={`absolute top-[50%]  lg:top-[60%] w-[80%] lg:pl-[60px] px-6 mt-[30px] 
                         text-white text-sm md:text-base ${active.title === item.title ? 'visible translate-x-0 opacity-1  transition-all duration-500 ease-in-out' :
-                            'invisible  opacity-0  transform translate-x-40 '}
+                            'invisible  opacity-0  transform -translate-x-40 lg:translate-x-40 '}
                     font-light`}
                         key={index}>
                         {item.content}

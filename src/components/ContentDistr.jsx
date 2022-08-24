@@ -46,7 +46,7 @@ const ContentDistr = () => {
     return (
         <div className='bg-inherit relative flex flex-col lg:justify-between lg:flex-row items-center h-auto '>
             <div ref={rightRef}
-                className="hidden md:w-[40%]  lg:flex  invisible -translate-x-40 opacity-0 pointer-events-none">
+                className="hidden md:w-[80%] lg:w-[40%]  md:flex  invisible -translate-x-40 opacity-0 pointer-events-none">
                 <img
                     src={image1} alt=""
                 />
@@ -56,21 +56,24 @@ const ContentDistr = () => {
                 />
                 <img
                     src={image3} alt=""
-                    className='transform -translate-x-28'
+                    className='transform -translate-x-28 '
                 />
+                {/* <img
+                    src={image6} alt=""
+                    className='transform w-auto -translate-x-28 block lg:hidden'
+                /> */}
             </div>
-            <div className="lg:hidden w-full flex items-center justify-start relative">
+            <div className="flex  md:w-[40%]  md:hidden ">
                 <img
                     src={image4} alt=""
-                    className='w-[35%] h-[430px] md:h-auto md:max-h-screen'
                 />
                 <img
                     src={image5} alt=""
-                    className='w-[35%] h-[430px]  md:h-auto  md:max-h-screen'
+                    className='transform '
                 />
                 <img
                     src={image6} alt=""
-                    className='w-[35%] h-[430px]  md:h-auto  md:max-h-screen'
+                    className='transform'
                 />
             </div>
             <div ref={leftRef}
