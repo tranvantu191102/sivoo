@@ -42,7 +42,7 @@ const ContentDistr = () => {
                     className='w-[35%] h-[430px]  md:h-auto  md:max-h-screen'
                 />
             </div>
-            <div className="w-full md:w-[60%] md:px-6 lg:w-[50%]  lg:pr-20 px-6">
+            <div className="w-full md:w-[100%] md:px-6 lg:w-[50%]  lg:pr-20 px-6">
                 <h3 className='font-semibold text-base text-current uppercase mt-6 lg:mt-0'>Content Distribution</h3>
                 <img src={frame} alt="" className='md:my-6 mt-2 mb-8' />
                 <p className='text-base text-current font-light'>
@@ -53,11 +53,11 @@ const ContentDistr = () => {
                 <div className="flex mt-5 md:mt-[100px] items-center justify-center flex-wrap">
                     <img
                         src={ios} alt=""
-                        className='w-auto h-[35px] md:h-[50px]   mr-8 md:mr-4'
+                        className='w-auto h-[35px] md:h-[50px] mb-2   mr-8 md:mr-4'
                     />
                     <img
                         src={android} alt=""
-                        className='w-auto h-[35px] md:h-[50px] mr-8 md:mr-4'
+                        className='w-auto h-[35px] md:h-[50px] mb-2 mr-8 md:mr-4'
                     />
                     <img
                         src={kaiOs} alt=""

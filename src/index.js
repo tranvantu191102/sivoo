@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Home from './pages/Home';
 import reportWebVitals from './reportWebVitals';
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
